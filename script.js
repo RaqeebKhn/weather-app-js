@@ -14,7 +14,7 @@ function getWeather() {
         .then(response => response.json())
         .then(data => {
             displayWeather(data);
-            changeBackground(data.name);  // Update the background when weather data is fetched
+            changeBackground(data.name);  
         })
         .catch(error => {
             console.error('Error fetching current weather data:', error);
@@ -122,14 +122,20 @@ function changeBackground(city) {
         Tokyo: 'tokyo-bg.jpg'
     };
 
+
+
+    
+
+    // this is extra requirement asked by pws assignment
+    
     const backgroundImage = backgroundImages[city];
 
     if (backgroundImage) {
         document.body.style.backgroundImage = `url(${backgroundImage})`;
-        document.body.style.backgroundSize = 'cover';  // Make sure the image covers the screen
-        document.body.style.backgroundPosition = 'center';  // Center the background image
-        document.body.style.backgroundRepeat = 'no-repeat';  // Prevent tiling of the image
+        document.body.style.backgroundSize = 'cover';  
+        document.body.style.backgroundPosition = 'center';  
+        document.body.style.backgroundRepeat = 'no-repeat';  
     } else {
-        document.body.style.backgroundImage = '';  // Reset background if no image is found
+        document.body.style.backgroundImage = '';  
     }
 }
